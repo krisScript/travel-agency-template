@@ -1,0 +1,8 @@
+.stats--section{
+    height: 100vh;
+    background: linear-gradient( rgba($primary, 0.9),rgba($primary, 0.9) ),url(../assets/images/venice.jpg) center no-repeat;
+    background-size:cover;
+    @include large-screen{
+        height: 40vh;
+    }
+}

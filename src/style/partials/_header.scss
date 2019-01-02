@@ -1,0 +1,205 @@
+.header {
+  width: 100vw;
+  height: 10vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &--fixed {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $primary;
+    opacity: 0;
+    box-shadow: 0 3px 15px 0 rgba($dark, 0.3);
+    animation: fix ease-in-out 400ms;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+    @keyframes fix {
+      from {
+        opacity: 0;
+        transform: scale(0.3) translateY(-60px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0px);
+      }
+    }
+  }
+  & > * {
+    padding: 0.5rem;
+  }
+  &__logo {
+    img {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  &__nav {
+    padding: 2rem;
+    @include large-screen {
+      width: 50%;
+    }
+    &__list {
+      display: none;
+      @include large-screen {
+        padding: 1rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        &__item {
+          a{
+            text-decoration: none;
+            font-size: 1rem;
+            color: var(--nav);
+            transition: 400ms;
+            &::after {
+              content: '';
+              display: block;
+              width: 0;
+              height: 2px;
+              background: var(--nav);
+              transition: width 300ms;
+            }
+            &.active{
+              &::after {
+                width: 100%;
+              }
+              &:hover{
+                &::after{
+                  transition: 100ms;
+                  transform: scale(1.1) translateY(0.5rem)
+                }
+              }
+            }
+            &:hover {
+              color: var(--nav);
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__nav--mobile--btn {
+    z-index: 5;
+    padding: 0.7rem;
+    border: none;
+    @include large-screen {
+      display: none;
+    }
+    background: transparent;
+    cursor: pointer;
+    @include easeOut;
+    .btn--line {
+      background: var(--nav);
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      @include easeOut;
+    }
+
+    &.close {
+      transform: rotate(180deg);
+      .btn--line {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+      }
+    }
+  }
+}
+
+// .header {
+//   width: 100vw;
+//   height: 10vh;
+//   @include flex-center;
+//   &__nav {
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     &__logo {
+//       display: block;
+//       padding: 0.3rem;
+//       transform: translateY(-20px);
+//       img {
+//         height: 6rem;
+//         width: 6rem;
+//       }
+//     }
+//     &__list {
+//       display: none;
+//       @include large-screen {
+//         height: 100%;
+//         width: 55%;
+//         list-style: none;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         &__item {
+//           padding: 0.7rem;
+//           a {
+//             text-decoration: none;
+//             color: $primary;
+//             font-size: 1rem;
+//           }
+//           &--login {
+//             a {
+//               text-align: center;
+//               display: block;
+//               color: $white;
+//               background: $primary;
+//               padding: 0.5rem 1rem 0.5rem 1rem;
+//               border-radius: 6rem;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   &__nav--button {
+//     z-index: 5;
+//     padding: 0.7rem;
+//     border: none;
+//     @include large-screen {
+//       display: none;
+//     }
+//     background: transparent;
+//     cursor: pointer;
+//     @include easeOut;
+//     .btn-line {
+//       background: var(--nav);
+//       width: 28px;
+//       height: 3px;
+//       margin: 0 0 5px 0;
+//       @include easeOut;
+//     }
+
+//     &.close {
+//       transform: rotate(180deg);
+//       .btn--line {
+//         &:nth-child(1) {
+//           transform: rotate(45deg) translate(5px, 5px);
+//         }
+//         &:nth-child(2) {
+//           opacity: 0;
+//         }
+//         &:nth-child(3) {
+//           transform: rotate(-45deg) translate(7px, -6px);
+//         }
+//       }
+//     }
+//   }
+// }

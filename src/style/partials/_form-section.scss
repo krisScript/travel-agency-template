@@ -1,0 +1,67 @@
+.form--section {
+  background: $primary;
+  @include large-screen {
+    height: 25vh;
+  }
+  &__form {
+    width: 100%;
+    @include flex-center;
+    flex-flow: column;
+    &--newsletter {
+      flex-flow: row;
+    }
+    @include large-screen {
+      flex-flow: row;
+      max-height: 20vh;
+    }
+
+    &__input {
+      font-size: 1.2rem;
+      border: solid 1px $secondary;
+      background: transparent;
+      color: $secondary;
+      outline: none;
+      width: 80%;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      @include large-screen {
+        width: 20%;
+        margin: 0 1rem 0 0;
+        height: 3.5rem;
+      }
+
+      &--newsletter {
+        width: 60%;
+        height: 3rem;
+        margin: 0;
+        @include medium-screen {
+          width: 50%;
+        }
+        @include large-screen {
+          width: 30%;
+        }
+      }
+      &::placeholder {
+        color: $secondary;
+      }
+      & option {
+        color: $primary;
+      }
+    }
+    &__button {
+      width: 80%;
+      @include large-screen {
+        width: 10%;
+        height: 3.5rem;
+      }
+      &--newsletter {
+        width: 30%;
+        height: 3rem;
+        border: solid 1px $secondary;
+        @include large-screen {
+          width: 15%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.newsletter--section{
+    height: 60vh;
+    @include large-screen{
+        height: 30vh;
+    }
+}

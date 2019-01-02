@@ -1,0 +1,108 @@
+.section{
+    padding: 1.2rem;
+    @include flex-center;
+    width: 100vw; 
+    &--column{
+        flex-flow: column;
+    }
+    &--large--screen--row{
+        @include large-screen{
+            flex-flow: row;
+        }
+    }
+    &--lighter{
+        background: $lighter;
+    }
+   &__title{
+        margin:1rem;
+        font-size: 1.7rem;
+        width: 100%;
+        text-align:center;
+        &--secondary{
+            color: $secondary;
+        }
+        &--large{
+            @include large-screen{
+                font-size: 2rem;
+            }
+        }
+    }
+   &__text{
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        color:lighten($dark,25%);
+        line-height:1.4;
+        width: 80%;
+        text-align: center;
+        @include large-screen{
+            width: 50%;
+            margin-bottom:2rem; 
+        }
+        i{
+            color: $primary;
+            margin:0 0.5rem 0 0.5rem;
+            font-size: 1.4rem;
+        }
+        &--secondary{
+            color: $secondary;
+        }
+        &--light{
+            color:darken( $light,20%);
+        }
+       
+    }
+    &__container {
+        width: 100%;
+        @include flex-center;
+        flex-flow: column;
+        justify-content: flex-start;
+        @include large-screen {
+          width: 50%;
+          height: 70%;
+        }
+        &__img{
+        width: 90%;
+        margin: 2rem;
+        @include large-screen{
+            margin: 0;
+        }
+        }
+      }
+      &__buttons--container{
+        text-align: center;
+        & > *{
+          margin: 0.5rem;
+        }
+      }
+      &__questions--contianer {
+        @include flex-center;
+        justify-content: flex-start;
+        flex-flow: column;
+        width: 100%;
+      }
+      &__question {
+        width: 100%;
+        background: $lighter;
+        color: $dark;
+        padding: 1rem;
+        margin: 0.3rem;
+        @include large-screen {
+          width: 80%;
+        }
+        &__summary {
+          font-size: 1.2rem;
+          width: 100%;
+          padding: 0.4rem;
+          cursor: pointer;
+        }
+        &__text {
+          padding: 1rem;
+          text-align: center;
+          font-size: 1rem;
+          width: 100%;
+          background: $lighter;
+        }
+      }
+}
+
+

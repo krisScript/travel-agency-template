@@ -1,0 +1,170 @@
+.card {
+  margin: 1.5rem;
+  width: 90%;
+  @include flex-center;
+  flex-flow: column;
+  position: relative;
+  &--secondary{
+    background: $secondary;
+  }
+  @include large-screen {
+    width: 20%;
+  }
+  &--large{
+    @include large-screen{
+      width: 25%;
+    }
+  }
+  &__img{
+    width: 100%;
+    &--large{
+      @include large-screen{
+        height: 15rem;
+      }
+    }
+    &--round{
+      border-radius: 100%;
+      width:8rem;
+      height: 8rem;
+    }
+    
+  }
+  &--carousel {
+     display: none;
+      @include large-screen {
+        display: flex;
+        background: lighten($light, 30%);
+      }
+      @include carousel-animation {
+        &--animate--right {
+          animation: right-card 250ms linear;
+          animation-fill-mode: forwards;
+          opacity: 0;
+          @keyframes right-card {
+            from {
+              opacity: 0;
+              transform: translateX(-50vw);
+            }
+  
+            to {
+              opacity: 1;
+              transform: translateX(0px);
+            }
+          }
+        }
+        &--animate--left {
+          animation: left-card 250ms linear;
+          animation-fill-mode: forwards;
+          @keyframes left-card {
+            from {
+              opacity: 0;
+              transform: translateX(50vw);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0px);
+            }
+          }
+        }
+      }
+      &--current {
+        display: flex;
+      }
+    }
+ 
+  &__icon--container{
+    font-size: 2rem;
+    color:$secondary;
+    padding: 1.5rem;
+    background:lighten($dark, 40%);
+    border-radius: 100%;
+  }
+  &__title {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0.5rem; 
+    &--secondary{
+      color:$secondary;
+    }
+    &--large{
+      font-size: 1.5rem;
+    }
+  }
+  &__price{
+    font-size: 1.2rem;
+    color: $primary;
+    padding:0.5rem;
+  }
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding:0.5rem;
+  }
+  &__subtitle{
+    font-size: 1.1rem;
+    color: lighten($dark, 15%);
+  }
+  &__text {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 1rem;
+    color: lighten($dark, 25%);
+    &--center{
+      text-align: center;
+    }
+    &--full{
+      padding: 1rem;
+      width: 100%;
+    }
+    &--secondary{
+      color:$secondary;
+    }
+    &--large{
+      font-size: 1.3rem;
+    }
+    &--time{
+      font-size: 1.2rem;
+      color: lighten($dark, 40%)
+    }
+  }
+  &__rating{
+    width: 100%;
+    padding: 1rem;
+    &__star{
+      color:$rating;
+      font-size: 1rem;
+    }
+    &__stars--container{
+      @include flex-center;
+    }
+    
+  }
+  &__overlay{
+    width: 100%;
+    padding: 1rem;
+    bottom:0;
+    color: $secondary;
+    @include flex-center;
+    position: absolute;
+    opacity: 0;
+  }
+  &:hover{
+    .card__overlay{
+      transition: opacity translateY;
+      animation: slide-up linear 200ms forwards;
+      @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform:translateY(-4rem) ;
+          }
+          to {
+            opacity: 1;
+            transform:translateY(0)  ;
+          }
+        }
+
+    }
+   
+  }
+  
+} 

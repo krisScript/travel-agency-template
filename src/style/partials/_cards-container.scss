@@ -1,0 +1,11 @@
+.cards--container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    @include large-screen{
+        justify-content: center;
+        flex-flow: row wrap;
+        width: 90%;
+    }
+}

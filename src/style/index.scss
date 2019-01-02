@@ -1,0 +1,39 @@
+@import 'vendor/normalize';
+@import 'modules/variables';
+@import 'modules/mixins';
+@import 'modules/media-queries';
+@import 'partials/header';
+@import 'partials/mobile-nav';
+@import 'partials/landing-section';
+@import 'partials/section';
+@import 'partials/button';
+@import 'partials/form-section';
+@import 'partials/services-section';
+@import 'partials/cards-container';
+@import 'partials/card';
+@import 'partials/stats-section';
+@import 'partials/carousel';
+@import 'partials/newsletter--section';
+@import 'partials/social-media-list';
+@import 'partials/contact-section';
+@import 'partials/footer';
+@import 'partials/slide';
+@import 'partials/section-404';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+    max-width: 100%;
+    max-height:100%;
+    overflow-x: hidden;
+}
+body{
+    font-size: 10px;
+    color: $dark;
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+}

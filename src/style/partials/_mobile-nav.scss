@@ -1,0 +1,59 @@
+.nav--mobile {
+  display: none;
+  &--active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 100vw;
+    animation: drop ease-in-out 400ms;
+    animation-fill-mode: forwards;
+    z-index: 2;
+    transform: translateY(9.5vh);
+   
+    &__list {
+      display: flex;
+      align-items: center;
+      flex-flow: column;
+      list-style: none;
+      width: 100%;
+      &__item {
+        text-align: center;
+        width: 100%;
+        background: $dark;
+        a {
+          font-size: 1rem;
+          color: $secondary;
+          text-decoration: none;
+          display: block;
+            width: 100%;
+            padding: 1.3rem;
+          &.active{
+            background: $primary;
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+@for $i from 1 through 6 {
+  .nav--mobile--active__list :nth-child(#{$i}) {
+    animation: menu-item ease-in-out 300ms;
+    animation-delay: (150ms * $i) - 300ms;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  @keyframes menu-item {
+    from {
+      opacity: 0;
+      transform:scale(0.3) ;
+    }
+    to {
+      opacity: 1;
+      transform:scale(1) ;
+    }
+  }
+}

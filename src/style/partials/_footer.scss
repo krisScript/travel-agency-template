@@ -1,0 +1,58 @@
+.footer {
+  width: 100vw;
+  background: $dark;
+  @include large-screen{
+      display: flex;
+    
+      height: 40vh;
+      padding: 0 4rem 0 4rem;
+  }
+  &__item {
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  &__list {
+    list-style: none;
+    @include flex-center;
+    flex-flow: column;
+
+    &__item {
+        padding: 0.7rem;
+      a{
+        font-size: 1rem;
+        color: $light;
+        text-decoration: none;
+        transition: 300ms;
+        &:hover{
+            color: $primary;
+        }
+      }
+      &--title {
+        font-size: 1.2rem;
+        color: $primary;
+      }
+    }
+  }
+  &__sign--up{
+      @include flex-center;
+      width: 100%;
+      input{
+          height: 2.7rem;
+          width: 70%;
+          border: none;
+          color: $secondary;
+          font-size: 1rem;
+          padding: 0.7rem;
+          background: lighten($dark,10%);
+          &::placeholder{
+              color: darken($secondary,10%);
+          }
+        
+      }
+      button{
+          height: 2.7rem;
+      }
+  }
+ 
+}

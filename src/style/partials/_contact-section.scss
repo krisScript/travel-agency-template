@@ -1,0 +1,23 @@
+.contact--section {
+  &__form {
+    @include flex-center;
+    flex-flow: column;
+    width: 100%;
+    input,
+    textarea {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      border-bottom: solid 2px $dark;
+      padding: 0.5rem;
+      margin: 2rem;
+      width: 80%;
+      @include large-screen {
+        width: 60%;
+      }
+    }
+    textarea {
+      height: 7rem;
+    }
+  }
+}

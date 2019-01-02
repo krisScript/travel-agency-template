@@ -1,0 +1,29 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50vh;
+    @include medium-screen {
+      height: 50vh;
+    }
+    @include large-screen{
+      width: 100%;
+    }
+    &__button {
+      @include large-screen{
+        display: none;
+      } 
+    }
+    &__container {
+      overflow: hidden;
+      @include flex-center;
+      width: 80vw;
+      @include medium-screen {
+        width: 40vw;
+      }
+      @include large-screen{
+        width: 100%;
+      }
+    }
+  }
+  
